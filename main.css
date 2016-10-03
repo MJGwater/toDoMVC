@@ -1,0 +1,267 @@
+/*NOTE: I'm going to need to dynamically add a class to separate each element so I can only mark one element complete at a time;
+
+/************
+Base
+************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+
+/************
+Layout - Sizing / Grid styles
+************/
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: rgb(245, 245, 245);
+  width: 100%;
+  margin: 3% auto;
+}
+
+h1 {
+  font-size: 6.25em;
+  
+}
+
+@media (min-width: 550px) {
+  body {
+    width: 550px;
+  }
+}
+
+/************
+Modules - target individual parts of page such as navigation or feature styles
+************/
+
+/***
+title
+**/
+.title {
+  color: rgb(234, 215, 215);
+  font-weight: 100;
+  text-align: center; 
+}
+
+/*********
+Main
+*********/
+main,
+footer {
+  width: 100%;
+  background: white;
+}
+
+@media (min-width: 550px){
+  main {
+  width: 550px;
+  }
+}
+
+/*****
+click to complete / complete all 
+****/
+.complete-all,
+.complete {
+  width: 45px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+  cursor: default;
+}
+
+
+/******
+enter-new
+******/
+
+.one-item,
+footer {
+  border-top: 1px solid #e6e6e6;
+}
+
+.one-item{
+  min-height: 65px;
+  position: relative;
+}
+
+.complete-all {
+  transform: rotate(90deg);
+}
+
+.put-in-item,
+.list-item {
+  padding: 15px 0 15px 15px;
+  border: none;
+  font-size: 1.5em;
+  width: calc(100% - 88px);
+  display: inline-block;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  margin-left: 40px;
+}
+
+.put-in-item{
+  margin-left: 0;
+}
+
+::-webkit-input-placeholder{
+  font-weight: 100;
+  font-style: italic;
+}
+
+::-moz-placeholder{
+  font-weight: 100;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {  
+   font-weight: 100;
+   font-style: italic;
+}
+
+/********
+.items-to-do
+********/
+
+.complete {
+  height: 30px;
+  width: 30px;
+  background: #fff;
+  /*background: rgb(237, 237, 237);*/
+  border: 1px solid rgb(237, 237, 237);
+  border-radius: 100%;
+  margin-left: 7px;
+  margin-right: 7px;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+
+.remove-to-do {
+  display: inline-block;
+  /*visibility: hidden;*/
+  color: red;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.checked-circle {
+  background: rgb(237, 237, 237);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+
+
+/******
+Footer
+*******/
+footer{
+  height: 50px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+footer p,
+footer div,
+footer a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+footer p:first-child {
+  margin-left: 10px;
+}
+
+footer div {
+  margin-left: 78px;
+}
+
+footer > a:last-child {
+  margin-left: 80px;
+  margin-right: 8px;
+  /*color: red;*/
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+.remove-from-flow{
+  position: absolute;
+}
+
+/************
+State - (ex: hover)
+************/
+input:focus {
+    outline:none;
+}
+
+/************
+Theme - styles based around the skin, or look and feel, of different modules.
+************/
